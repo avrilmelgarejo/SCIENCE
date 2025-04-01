@@ -1,0 +1,22 @@
+import sympy as sp
+
+def balancear_combusion(hidrocarburo, tipo):
+    # Definir las variables
+    C, H, O = sp.symbols('C H O')
+    
+    # Según el tipo de hidrocarburo, definir la fórmula
+    if tipo == "alcano":  # CxHy (alcanos)
+        x, y = map(int, hidrocarburo.split('C')[1].split('H'))
+    elif tipo == "alqueno":  # CxHy (alquenos)
+        x, y = map(int, hidrocarburo.split('C')[1].split('H'))
+    elif tipo == "alquino":  # CxHy (alquinos)
+        x, y = map(int, hidrocarburo.split('C')[1].split('H'))
+    else:
+        return "Tipo de compuesto no soportado"
+    
+    # Definir la ecuación de la combustión
+    # CxHy + O2 -> CO2 + H2O
+    C2 = sp.symbols(f'C2_{x}')
+    H2 = sp.symbols(f'H2_{y}')
+    O2 = sp.symbols(f'O2_{x}') 
+    equation = `Alquinos
